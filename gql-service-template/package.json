@@ -1,6 +1,6 @@
 {
   "name": "service",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "author": "Odee",
   "license": "MIT",
@@ -11,7 +11,10 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "test": "jest",
     "test:watch": "jest --watch",
-    "lint": "eslint \"src/**/*\""
+    "lint": "eslint \"src/**/*\"",
+    "happy": "yarn format && yarn lint && yarn test",
+    "release": "yarn happy && standard-version",
+    "release:beta": "yarn happy && standard-version -p beta"
   },
   "dependencies": {
     "apollo-server": "^2.15.1",
@@ -31,6 +34,7 @@
     "lint-staged": "^10.2.11",
     "nodemon": "^2.0.4",
     "prettier": "^2.0.5",
+    "standard-version": "^8.0.2",
     "typescript": "^3.9.6"
   },
   "husky": {
@@ -39,8 +43,6 @@
     }
   },
   "lint-staged": {
-    "./src/**/*.{js,jsx,ts,tsx}": [
-      "yarn lint --fix-dry-run"
-    ]
+    "./src/**/*.{js,jsx,ts,tsx}": ["yarn lint --fix-dry-run"]
   }
 }
