@@ -14,6 +14,7 @@ export type Book = {
   __typename?: 'Book';
   title?: Maybe<Scalars['String']>;
   author?: Maybe<Scalars['String']>;
+  aa?: Maybe<Scalars['String']>;
 };
 
 export type Query = {
@@ -116,6 +117,7 @@ export type ResolversParentTypes = {
 export type BookResolvers<ContextType = any, ParentType extends ResolversParentTypes['Book'] = ResolversParentTypes['Book']> = {
   title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   author?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  aa?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType>;
 };
 
